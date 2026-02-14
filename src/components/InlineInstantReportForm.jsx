@@ -88,7 +88,7 @@ export default function InlineInstantReportForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="px-0 pb-3 sm:pb-4 pt-0 bg-transparent rounded-[7px] flex flex-col gap-3 sm:gap-4 w-full"
+      className="px-0 pb-3 sm:pb-4 pt-0 bg-transparent rounded-[7px] flex flex-col gap-3 sm:gap-4 w-full md:mt-[-50px]"
       aria-label={intl.formatMessage({ id: "form.aria.instantReportForm" })}
     >
       <div className="inline-report-grid grid grid-cols-[105px_1fr] gap-[12px] w-full items-center justify-center">
@@ -134,7 +134,7 @@ export default function InlineInstantReportForm({
       </div>
 
       <div className="action-row" >
-        <span className="text-white font-arsenal flex items-center whitespace-nowrap" style={{ fontSize: 'clamp(20px, 3vw, 26px)', marginLeft: '24px', paddingTop: 'clamp(8px, 2vw, 12px)', paddingBottom: 'clamp(8px, 2vw, 12px)', transform: 'translateY(-4px)' }}>
+        <span className="text-white font-arsenal flex items-center whitespace-nowrap ml-[-20px]" style={{ fontSize: 'clamp(20px, 3vw, 26px)', paddingTop: 'clamp(8px, 2vw, 12px)', paddingBottom: 'clamp(8px, 2vw, 12px)', transform: 'translateY(-4px)' }}>
       ₹ {price/100}
         </span>
 

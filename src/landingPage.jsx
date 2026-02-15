@@ -242,115 +242,119 @@ const [showLogin, setShowLogin] = useState(false);
         .text-fluid-24-30{font-size:clamp(24px,3.2vw,30px)}
       `}</style>
 
-      {/* HERO */}
-<section className="relative min-h-screen bg-black flex flex-col pt-0 overflow-x-hidden">
-  
-  {/* BACKGROUND GRADIENT LINE (Bottom) */}
-  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#333] to-transparent opacity-50" />
 
-  {/* NOTE: Maine manual HEADER <div> remove kar diya hai taaki duplication na ho */}
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen bg-black flex flex-col pt-0 overflow-x-hidden">
+        
+        {/* BACKGROUND GRADIENT LINE (Bottom) */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#333] to-transparent opacity-50" />
 
-  {/* MAIN CONTENT AREA */}
-  <div className="flex-1 flex flex-col justify-center items-center w-full relative z-10 pt-20 md:pt-12 pb-10">
-    
-    {/* 1. HERO TEXT SECTION */}
-    <div className="text-center w-full px-4 mb-10 md:mb-14">
-      
-      {/* Main Headline */}
-      <h1 className="font-balgin font-light uppercase leading-[1.3] tracking-wide text-white text-center"
-    style={{ fontSize: 'clamp(28px, 5vw, 54px)' }}>
-  
-  {/* Line 1: YOUR MOBILE NUMBER */}
-  <span className="block">
-    <FormattedMessage id="hero.title.line1" defaultMessage="YOUR MOBILE NUMBER" />
-  </span>
-
-  {/* Line 2: IS THE KEY TO ACHIEVING */}
-  <span className="block mt-1 sm:mt-2">
-    <FormattedMessage id="hero.title.line2" defaultMessage="IS THE" />
-    {/* Notice the space: " KEY " taaki THE aur TO se na chipke */}
-    <span className="text-[#ff914d] font-normal">
-      {" "}
-      <FormattedMessage id="hero.title.key" defaultMessage="KEY" />
-      {" "}
-    </span>
-    <FormattedMessage id="hero.title.toAchieving" defaultMessage="TO ACHIEVING" />
-  </span>
-
-  {/* Line 3: YOUR DREAMS (Maine "TO" hata diya hai duplication khatam karne ke liye) */}
-  <span className="block mt-1 sm:mt-2">
-    <FormattedMessage id="hero.tittle.line3" defaultMessage="YOUR " />
-    <span className="text-[#ff914d] font-normal">
-      <FormattedMessage id="hero.title.dreams" defaultMessage="DREAMS" />
-    </span>
-  </span>
-</h1>
-
-      {/* Subtitles */}
-      <div className="mt-6 md:mt-8 space-y-2 text-gray-200 font-thin tracking-wide"
-           style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
-        <p>Every number carries a pattern</p>
-        <p>Discover How a Mobile Number Shapes Life’s Key Areas</p>
-      </div>
-    </div>
-
-    {/* 2. ICONS SECTION */}
-    {/* Mobile: Vertical List (Left Aligned) | Desktop: Horizontal Row (Centered) */}
-    <div className="w-full flex justify-center mb-10 md:mb-16 mt-[-30px]">
-      
-      {/* Container */}
-      <div className="
-          grid grid-cols-[50px_1fr] gap-y-6 gap-x-4 items-center w-fit
-          md:flex md:flex-row md:gap-12 lg:gap-20 md:w-auto
-      ">
-        {[
-          [financeImg, "Finance & Work"],
-          [fortuneImg, "Fortune"],
-          [loveImg, "Charm & Love"],
-          [intuitionImg, "Intuition"],
-          [intelligenceImg, "Intelligence & Wisdom"],
-        ].map(([src, label], i) => (
-          <React.Fragment key={i}>
-            {/* Wrapper: Mobile = Grid, Desktop = Flex Column */}
-            <div className="contents md:flex md:flex-col md:items-center md:gap-4">
-              
-              {/* Icon */}
-              <div className="flex items-center justify-center">
-                <img 
-                  src={src} 
-                  alt={label} 
-                  className="w-12 h-12 md:w-16 md:h-16 object-contain" 
-                />
-              </div>
-
-              {/* Text */}
-              <span className="text-white font-light text-left md:text-center text-[18px] md:text-[18px] whitespace-nowrap md:whitespace-normal md:max-w-[120px] leading-tight">
-                {label}
+        {/* MAIN CONTENT AREA */}
+        <div className="flex-1 flex flex-col justify-center items-center w-full relative z-10 pt-20 md:pt-12 pb-10">
+          
+          {/* 1. HERO TEXT SECTION */}
+          <div className="text-center w-full px-4 mb-10 md:mb-14">
+            
+            {/* Main Headline */}
+            {/* FIX 1: Adjusted clamp min-size from 28px to 22px to prevent awkward wrapping on mobile */}
+            <h1 className="font-balgin font-light uppercase leading-[1.3] tracking-wide text-white text-center"
+              style={{ fontSize: 'clamp(22px, 5vw, 54px)' }}>
+        
+              {/* Line 1: YOUR MOBILE NUMBER */}
+              <span className="block">
+                <FormattedMessage id="hero.title.line1" defaultMessage="YOUR MOBILE NUMBER" />
               </span>
+
+              {/* Line 2: IS THE KEY TO ACHIEVING */}
+              <span className="block mt-1 sm:mt-2">
+                <FormattedMessage id="hero.title.line2" defaultMessage="IS THE" />
+                <span className="text-[#ff914d] font-normal">
+                  {" "}
+                  <FormattedMessage id="hero.title.key" defaultMessage="KEY" />
+                  {" "}
+                </span>
+                <FormattedMessage id="hero.title.toAchieving" defaultMessage="TO ACHIEVING" />
+              </span>
+
+              {/* Line 3: YOUR DREAMS */}
+              <span className="block mt-1 sm:mt-2">
+                <FormattedMessage id="hero.tittle.line3" defaultMessage="YOUR " />
+                <span className="text-[#ff914d] font-normal">
+                  <FormattedMessage id="hero.title.dreams" defaultMessage="DREAMS" />
+                </span>
+              </span>
+            </h1>
+
+            {/* Subtitles */}
+            <div className="mt-6 md:mt-8 space-y-2 text-gray-200 font-thin tracking-wide"
+                  style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
+              <p>Every number carries a pattern</p>
+              
+              {/* FIX 2: Specific Line Break for Mobile ("Third line") */}
+              <p>
+                Discover How a Mobile Number <br className="block sm:hidden" />
+                Shapes Life’s Key Areas
+              </p>
             </div>
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
+          </div>
 
-    {/* 3. FORM SECTION */}
-    <div className="w-full max-w-[340px] md:max-w-[420px] px-4 mt-3">
-      <InlineInstantReportForm
-        ctaLabel={intl.formatMessage({ id: "form.ctaInstantReport" })}
-        onSubmit={openPrefilledModal}
-      />
-    </div>
+          {/* 2. ICONS SECTION */}
+          <div className="w-full flex justify-center md:mb-16 mt-[-30px]">
+            
+            {/* Container */}
+            <div className="
+                grid grid-cols-[60px_1fr] gap-y-3 gap-x-4 items-center w-fit
+                md:flex md:flex-row md:gap-12 lg:gap-20 md:w-auto 
+            ">
+              {[
+                [financeImg, "Finance & Work"],
+                [fortuneImg, "Fortune"],
+                [loveImg, "Charm & Love"],
+                [intuitionImg, "Intuition"],
+                [intelligenceImg, "Intelligence & Wisdom"],
+              ].map(([src, label], i) => (
+                <React.Fragment key={i}>
+                  {/* Wrapper */}
+                  <div className="contents md:flex md:flex-col md:items-center md:gap-4">
+                    
+                    {/* Icon */}
+                    <div className="flex items-center justify-center">
+                      {/* FIX 3: Increased Icon Sizes (w-14 mobile, w-20 desktop) */}
+                      <img 
+                        src={src} 
+                        alt={label} 
+                        className="w-14 h-14 md:w-20 md:h-20 object-contain" 
+                      />
+                    </div>
 
-  </div>
+                    {/* Text */}
+                    <span className="text-white font-light text-left md:text-center text-[18px] md:text-[18px] whitespace-nowrap md:whitespace-normal md:max-w-[120px] leading-tight">
+                      {label}
+                    </span>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
 
-  {/* MENU & NAVBAR LOGIC */}
-  {/* Yeh component hi ab header handle karega */}
-  {menuOpen && (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40" onClick={() => setMenuOpen(false)} />
-  )}
-  <CKNavbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} setShowSignup={setShowSignup} />
+          {/* 3. FORM SECTION */}
+          <div className="w-full max-w-[340px] md:max-w-[420px] px-4 mt-3">
+            <InlineInstantReportForm
+              ctaLabel={intl.formatMessage({ id: "form.ctaInstantReport" })}
+              onSubmit={openPrefilledModal}
+            />
+          </div>
 
-</section>
+        </div>
+
+        {/* ... (Navbar logic remains) ... */}
+        {menuOpen && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40" onClick={() => setMenuOpen(false)} />
+        )}
+        <CKNavbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} setShowSignup={setShowSignup} />
+
+      </section>
+
 
       {/* WHAT IS THIS */}
       < section className="relative min-h-screen bg-black flex items-center justify-center pt-8 sm:pt-10 md:pt-12 lg:pt-[44px] pb-8 sm:pb-10 md:pb-12 lg:pb-[64px] px-4 sm:px-6" >

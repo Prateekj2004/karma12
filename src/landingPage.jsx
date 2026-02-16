@@ -253,52 +253,72 @@ const [showLogin, setShowLogin] = useState(false);
         <div className="flex-1 flex flex-col justify-center items-center w-full relative z-10 pt-20 md:pt-12 pb-10">
           
           {/* 1. HERO TEXT SECTION */}
-          <div className="text-center w-full px-4 mb-10 md:mb-14">
-            
-            {/* Main Headline */}
-            {/* FIX 1: Adjusted clamp min-size from 28px to 22px to prevent awkward wrapping on mobile */}
-            <h1 className="font-balgin font-light uppercase leading-[1.3] tracking-wide text-white text-center"
-              style={{ fontSize: 'clamp(22px, 5vw, 54px)' }}>
+<div className="text-center w-full px-4 mb-10 md:mb-14">
+  
+  {/* FONT SIZE: Mobile ke liye 28px (Bada), Desktop ke liye 54px (Same as before) */}
+  <h1 className="font-balgin font-light uppercase leading-[1.1] md:leading-[1.3] tracking-wide text-white text-center"
+      style={{ fontSize: 'clamp(28px, 5vw, 54px)' }}>
+
+    {/* LINE 1: YOUR MOBILE NUMBER */}
+    <span className="block mb-1">
+      <FormattedMessage id="hero.title.line1" defaultMessage="YOUR MOBILE NUMBER" />
+    </span>
+
+    {/* LINE 2 (Desktop): IS THE KEY TO ACHIEVING */}
+    {/* MOBILE: Break ho jayega */}
+    <span className="block md:inline">
+      
+      {/* Mobile Row 2: IS THE KEY */}
+      <span className="block md:inline mt-1 md:mt-2">
+        <FormattedMessage id="hero.title.line2" defaultMessage="IS THE" />
+        <span className="text-[#ff914d] font-normal">
+          {" "}
+          <FormattedMessage id="hero.title.key" defaultMessage="KEY" />
+          {" "}
+        </span>
+      </span>
+
+      {/* Mobile Row 3: TO ACHIEVING YOUR */}
+      {/* Desktop: Yahan "YOUR" chup jayega, sirf "TO ACHIEVING" dikhega */}
+      <span className="block md:inline mt-1 md:mt-0">
+        <FormattedMessage id="hero.title.toAchieving" defaultMessage="TO ACHIEVING" />
         
-              {/* Line 1: YOUR MOBILE NUMBER */}
-              <span className="block">
-                <FormattedMessage id="hero.title.line1" defaultMessage="YOUR MOBILE NUMBER" />
-              </span>
+        {/* MOBILE ONLY "YOUR" */}
+        <span className="md:hidden">
+           {" "}<FormattedMessage id="hero.tittle.line3" defaultMessage="YOUR" />
+        </span>
+      </span>
 
-              {/* Line 2: IS THE KEY TO ACHIEVING */}
-              <span className="block mt-1 sm:mt-2">
-                <FormattedMessage id="hero.title.line2" defaultMessage="IS THE" />
-                <span className="text-[#ff914d] font-normal">
-                  {" "}
-                  <FormattedMessage id="hero.title.key" defaultMessage="KEY" />
-                  {" "}
-                </span>
-                <FormattedMessage id="hero.title.toAchieving" defaultMessage="TO ACHIEVING" />
-              </span>
+    </span>
 
-              {/* Line 3: YOUR DREAMS */}
-              <span className="block mt-1 sm:mt-2">
-                <FormattedMessage id="hero.tittle.line3" defaultMessage="YOUR " />
-                <span className="text-[#ff914d] font-normal">
-                  <FormattedMessage id="hero.title.dreams" defaultMessage="DREAMS" />
-                </span>
-              </span>
-            </h1>
+    {/* LINE 3 (Desktop): YOUR DREAMS */}
+    {/* Mobile Row 4: DREAMS ("Your" upar shift ho gaya mobile me) */}
+    <span className="block mt-1 md:mt-2">
+      
+      {/* DESKTOP ONLY "YOUR" */}
+      <span className="hidden md:inline">
+        <FormattedMessage id="hero.tittle.line3" defaultMessage="YOUR " />
+      </span>
 
-            {/* Subtitles */}
-            <div className="mt-6 md:mt-8 space-y-0 text-gray-200 font-thin tracking-wide">
-              <p className="mb-4 text-[20px] md:text-[30px]">Every number carries a pattern</p>
-              
-              {/* FIX 2: Specific Line Break for Mobile ("Third line") */}
-              <p style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
-                Discover How a Mobile Number <br className="block sm:hidden" />
-                Shapes Life’s Key Areas
-              </p>
-            </div>
-          </div>
+      <span className="text-[#ff914d] font-normal">
+        <FormattedMessage id="hero.title.dreams" defaultMessage="DREAMS" />
+      </span>
+    </span>
+
+  </h1>
+
+  {/* Subtitles (No Changes) */}
+  <div className="mt-6 md:mt-8 space-y-0 text-gray-200 font-thin tracking-wide">
+    <p className="mb-4 text-[20px] md:text-[30px]">Every number carries a pattern</p>
+    <p style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
+      Discover How a Mobile Number <br className="block sm:hidden" />
+      Shapes Life’s Key Areas
+    </p>
+  </div>
+</div>
 
           {/* 2. ICONS SECTION */}
-          <div className="w-full flex justify-center md:mb-16 mt-[-30px]">
+          <div className="w-full flex justify-center md:mb-16 mt-[-15px]">
             
             {/* Container */}
             <div className="
@@ -337,7 +357,7 @@ const [showLogin, setShowLogin] = useState(false);
           </div>
 
           {/* 3. FORM SECTION */}
-          <div className="w-full max-w-[340px] md:max-w-[420px] px-4 mt-3">
+          <div className="w-full max-w-[340px] md:max-w-[420px] px-4 mt-10">
             <InlineInstantReportForm
               ctaLabel={intl.formatMessage({ id: "form.ctaInstantReport" })}
               onSubmit={openPrefilledModal}

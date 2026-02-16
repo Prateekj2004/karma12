@@ -286,12 +286,11 @@ const [showLogin, setShowLogin] = useState(false);
             </h1>
 
             {/* Subtitles */}
-            <div className="mt-6 md:mt-8 space-y-2 text-gray-200 font-thin tracking-wide"
-                  style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
-              <p>Every number carries a pattern</p>
+            <div className="mt-6 md:mt-8 space-y-0 text-gray-200 font-thin tracking-wide">
+              <p className="mb-4 text-[20px] md:text-[30px]">Every number carries a pattern</p>
               
               {/* FIX 2: Specific Line Break for Mobile ("Third line") */}
-              <p>
+              <p style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}>
                 Discover How a Mobile Number <br className="block sm:hidden" />
                 Shapes Life’s Key Areas
               </p>
@@ -311,7 +310,7 @@ const [showLogin, setShowLogin] = useState(false);
                 [fortuneImg, "Fortune"],
                 [loveImg, "Charm & Love"],
                 [intuitionImg, "Intuition"],
-                [intelligenceImg, "Intelligence & Wisdom"],
+                [intelligenceImg, "Intelligence"],
               ].map(([src, label], i) => (
                 <React.Fragment key={i}>
                   {/* Wrapper */}

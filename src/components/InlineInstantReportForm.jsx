@@ -134,7 +134,7 @@ export default function InlineInstantReportForm({
       </div>
 
       <div className="action-row" >
-        <span className="text-white font-arsenal flex items-center whitespace-nowrap ml-[-20px]" style={{ fontSize: 'clamp(20px, 3vw, 26px)', paddingTop: 'clamp(8px, 2vw, 12px)', paddingBottom: 'clamp(8px, 2vw, 12px)', transform: 'translateY(-4px)' }}>
+        <span className="text-white font-arsenal flex items-center whitespace-nowrap ml-[13px]" style={{ fontSize: 'clamp(20px, 3vw, 26px)', paddingTop: 'clamp(8px, 2vw, 12px)', paddingBottom: 'clamp(8px, 2vw, 12px)', transform: 'translateY(-4px)' }}>
       ₹ {price/100}
         </span>
 
@@ -144,7 +144,7 @@ export default function InlineInstantReportForm({
             className="relative overflow-hidden rounded-md text-white font-balgin font-bold animated-border-btn butt"
             style={{ padding: 'clamp(8px, 2vw, 12px) clamp(16px, 4vw, 40px)', fontSize: 'clamp(13px, 2vw, 16px)' }}
           >
-            <span className="relative z-10 whitespace-nowrap">{ctaLabel}</span>
+            <span className="relative z-10 whitespace-nowrap">Get Instant Report</span>
 
             <style>{`
             @property --angle {
